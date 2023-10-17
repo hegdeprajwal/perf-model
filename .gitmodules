@@ -1,0 +1,6 @@
+[submodule "bine-model"]
+	path = bine-model
+	url = git@github.com:hegdeprajwal/bine-model.git
+[submodule "darch-model"]
+	path = darch-model
+	url = git@github.com:hegdeprajwal/darch-model.git
