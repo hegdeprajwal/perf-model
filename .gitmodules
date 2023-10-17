@@ -4,3 +4,6 @@
 [submodule "darch-model"]
 	path = darch-model
 	url = git@github.com:hegdeprajwal/darch-model.git
+[submodule "microbench"]
+	path = microbench
+	url = git@github.com:hegdeprajwal/VR_MicroBench.git
