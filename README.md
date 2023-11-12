@@ -13,7 +13,7 @@ git clone https://github.com/hegdeprajwal/perf-model.git
 ```
 
 ### 2. Clone the Repository
-This repository includes submodules (Bine-Brake, Darch, Microbenchmark), which need to be initialized and updated. Navigate to the repository root directory and run:
+This repository includes submodules (gem5 from Bine Brank, gem5 from Darch and Microbenchmark), which need to be initialized and updated. Navigate to the repository root directory and run:
 ```bash
 cd perf-model
 git submodule update --init --recursive
@@ -24,17 +24,20 @@ Navigate to the microbenchmark directory:
 ```bash
 cd microbench
 ```
-To build Microbenchmark for the ARM architecture, run the following command:
+To build Microbenchmark for the ARM architecture (make sure you are running this on ARM Machine), run the following command:
 ```bash
 make ARM
 ```
 
 ### 4. Gather Binaries and run perf command
-To collect the necessary binaries and modify to include .Y(n1 iterations) and .Z(n2 iterations) form of the benchmark, execute:
+To collect the necessary binaries and modify to include .Y(n1 number of iterations) and .Z(n2 number of iterations) form of the benchmark, execute:
 ```bash
 source gather_bin.sh
 ```
-Run the perf command and collect stats:
+**Note:**
+It is crucial to execute the build and run processes for two executables—one with the .Y variant (N1: lower loop count) and the other with the .Z variant (N2: higher loop count). This approach is employed to gather statistics specifically focused on the inside loop portion. The difference of N2 stats from N1 allows us to isolate and extract the statistics pertaining only to the code section inside the loop.
+
+Run the perf command and collect stats for all the executables:
 ```bash
 source run_perf.sh
 ```
@@ -78,6 +81,6 @@ Gather all the stats and execute the following command to print the stats space 
 
 ## Additional Information
 - For more information on gem5 and its usage, please refer to the official gem5 documentation.
-- For specific details about the Bine-Brake and Darch modifications, please refer to their respective documentation or the associated repositories.
+- For specific details about the Bine Brank and Darch modifications, please refer to their respective documentation or the associated repositories.
 
 Sit back and enjoy your coffee! Happy Simulations!!
